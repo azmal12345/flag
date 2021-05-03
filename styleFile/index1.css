@@ -1,0 +1,570 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #151515;
+  color: white;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+img, a, i {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  -webkit-box-shadow: 5px 8px 8px -6px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 8px 8px -6px rgba(0, 0, 0, 0.5);
+  padding: 5px 15px;
+  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999999;
+}
+
+header .logo_flag {
+  width: 70px;
+}
+
+header .logo_flag img {
+  width: 100%;
+}
+
+header nav {
+  width: 85%;
+}
+
+header nav ul {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-left: 40px;
+  list-style: none;
+}
+
+header nav ul li a {
+  color: orange;
+  font-weight: 500;
+  font-size: 1.10rem;
+  position: relative;
+}
+
+header nav ul li a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+header nav ul li a:hover::before {
+  position: absolute;
+  top: 35px;
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid white;
+}
+
+header .bars_icon {
+  position: absolute;
+  top: 22.50px;
+  right: 0px;
+  width: 100px;
+  cursor: pointer;
+  display: none;
+}
+
+header .bars_icon .bars_line {
+  width: 45px;
+  height: 3px;
+  background-color: orange;
+  margin: 9.10px;
+}
+
+header .bars_icon .activeLine {
+  width: 30px;
+}
+
+header .searchBox {
+  width: 100%;
+  margin: 10px auto;
+  opacity: 0;
+  display: none;
+  z-index: -5;
+}
+
+header .searchBox form input {
+  width: 88%;
+  margin: 0 auto;
+  position: absolute;
+  left: 7%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #151515;
+  color: orange;
+  font-weight: bold;
+}
+
+header .searchBox ::-webkit-input-placeholder {
+  font-weight: normal;
+  color: rgba(169, 169, 169, 0.388);
+  font-size: 12px;
+}
+
+header .searchBox :-ms-input-placeholder {
+  font-weight: normal;
+  color: rgba(169, 169, 169, 0.388);
+  font-size: 12px;
+}
+
+header .searchBox ::-ms-input-placeholder {
+  font-weight: normal;
+  color: rgba(169, 169, 169, 0.388);
+  font-size: 12px;
+}
+
+header .searchBox ::placeholder {
+  font-weight: normal;
+  color: rgba(169, 169, 169, 0.388);
+  font-size: 12px;
+}
+
+header .searchBox .angleLeft {
+  font-size: 60px;
+  margin-top: -12px;
+  font-weight: normal;
+  color: orange;
+}
+
+.searchBox.searchInputBox {
+  opacity: 1;
+  z-index: 5;
+  display: block;
+}
+
+.scrollTop {
+  width: 100%;
+  width: 45px;
+  height: 45px;
+  background-color: orange;
+  position: fixed;
+  bottom: -100%;
+  right: 35px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 2rem;
+  color: white;
+  z-index: 555555555555555;
+  text-decoration: none;
+  opacity: 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  -webkit-animation: scrollWidth 0.5s ease infinite;
+          animation: scrollWidth 0.5s ease infinite;
+}
+
+.scrollTop i {
+  color: white;
+}
+
+.scrollTop.scrollButton {
+  opacity: 1;
+  bottom: 25px;
+}
+
+.passpoart_body {
+  margin-top: 35px;
+  margin-bottom: 77.50px;
+  width: 100%;
+}
+
+.passpoart_body ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.passpoart_body ul li {
+  margin: 2px;
+  list-style: none;
+  position: relative;
+  border: 1px solid #333333;
+}
+
+.passpoart_body ul li:hover {
+  border: 1px solid rgba(255, 166, 0, 0.578);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.passpoart_body ul li p {
+  background-color: #333333;
+  padding: 10px 2px;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  position: absolute;
+  top: -45px;
+  width: 200px;
+  z-index: 5;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.passpoart_body ul li p::before {
+  position: absolute;
+  top: 65%;
+  left: 10%;
+  -webkit-transform: translateY(-50%, -50%);
+          transform: translateY(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  -webkit-transform: rotate(134deg);
+          transform: rotate(134deg);
+  content: "";
+  background-color: #333333;
+  z-index: -1;
+}
+
+.passpoart_body ul li img {
+  width: 50.64px;
+  height: 65.35px;
+}
+
+.passpoart_body ul li:hover p {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.passpoartPopsection {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 10%;
+  text-align: center;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -999999999;
+}
+
+.passpoartPopsection .overflow {
+  position: absolute;
+  top: -500px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1000vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: -1;
+}
+
+.passpoartPopsection .closeIcon {
+  width: 100%;
+  position: relative;
+}
+
+.passpoartPopsection .closeIcon i {
+  position: absolute;
+  right: 50px;
+  font-size: 1.65rem;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.passpoartPopsection .closeIcon i:active {
+  -webkit-transform: rotate(390deg);
+          transform: rotate(390deg);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.passpoartPopsection .countryNameWidthPasspoart {
+  margin-bottom: 20px;
+}
+
+.passpoartPopsection .countryNameWidthPasspoart h1 {
+  font-size: 1.50rem;
+  font-weight: normal;
+  padding: 0;
+  margin: 0 0 5px 0;
+}
+
+.passpoartPopsection .countryNameWidthPasspoart .passportText {
+  font-size: 1rem;
+  color: #AD8256;
+  font-weight: normal;
+}
+
+.passpoartPopsection .passpoartImgWidthCountry {
+  width: 100%;
+}
+
+.passpoartPopsection .passpoartImgWidthCountry img {
+  width: 170px;
+}
+
+.passpoartPopsection .arrowAngel {
+  width: 100%;
+  position: absolute;
+  top: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 25px;
+}
+
+.passpoartPopsection .arrowAngel i {
+  font-size: 2.50rem;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.passpoartPopsection .arrowAngel i:hover {
+  color: orange;
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
+}
+
+.passpoartPopsection .countryRankCountry {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15.50px 0;
+}
+
+.passpoartPopsection .countryRankCountry h1 {
+  font-size: 1.50rem;
+  margin: 0 50px;
+}
+
+.passpoartPopsection .countryRankName {
+  width: 100%;
+}
+
+.passpoartPopsection .countryRankName button {
+  padding: 1px 10px;
+  border: none;
+  outline: none;
+  background-color: #AD8256;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.passpoartPopsection .countryRankName button:hover {
+  background-color: white;
+}
+
+.passpoartPopsection .parentButton button {
+  margin: 10px 0;
+  width: 200px;
+  padding: 3px 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #AD8256;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.passpoartPopsection .parentButton button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+}
+
+.passpoartPopsection .passportSocialIcon i {
+  width: 35px;
+  height: 35px;
+  background-color: #AD8256;
+  color: white;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  line-height: 35px;
+  margin: 0 5px;
+}
+
+.passpoartPopsection .passportSocialIcon i:hover {
+  background-color: white;
+  color: black;
+}
+
+.popPassport {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  opacity: 1;
+  overflow: visible;
+  z-index: 999999999;
+}
+
+.passport_body {
+  position: fixed;
+  bottom: 0;
+  z-index: 555555;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: marqueeText 30s linear infinite;
+          animation: marqueeText 30s linear infinite;
+}
+
+@-webkit-keyframes marqueeText {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes marqueeText {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+.passport_body .passport_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.passport_body .passport_box .passport_img {
+  width: 150px;
+}
+
+.passport_body .passport_box .passport_img img {
+  width: 100%;
+}
+
+.passport_body .passport_box .passport_text {
+  width: 150px;
+  height: 80px;
+  background: black;
+  padding: 0 5px;
+  border-radius: 5px;
+  margin: 0 2px;
+}
+
+.passport_body .passport_box .passport_text .passport_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+}
+
+.passport_body .passport_box .passport_text .passport_row img {
+  width: 75px;
+  height: 60px;
+}
+
+.passport_body .passport_box .passport_text .passport_row h1 {
+  font-size: 1rem;
+}
+
+.passport_body .passport_box .passport_text .passport_row h1 span {
+  padding: 0 5px;
+}
+
+.passport_body .passport_box .passport_text .passport_row h1 .countryRed {
+  color: red;
+}
+
+.passport_body .passport_box .passport_text .passport_row h1 .countryRank {
+  line-height: 35px;
+  color: rgba(255, 255, 255, 0.531);
+}
+
+.passport_body .passport_box .passport_text .passport_row h1 .angelArrow p {
+  padding: 0;
+  margin: 0;
+}
+
+.passport_body .passport_box .passport_index {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  background-color: black;
+}
+
+.passport_body .passport_box .passport_index h1, .passport_body .passport_box .passport_index p {
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  border-right: 2px solid white;
+  line-height: 15px;
+  margin: 2px 0;
+}
+/*# sourceMappingURL=index1.css.map */

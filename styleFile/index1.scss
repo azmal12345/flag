@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap');
+@import "sassColor";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    // font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #151515;
+     color: rgb(255,255,255);
+}
+
+html,body{
+    scroll-behavior: smooth;
+}
+
+img,a,i{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255,255,255);
+
+    &:hover{
+        color: rgb(255,255,255);
+    }
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background-color: $black;
+    box-shadow: 5px 8px 8px -6px rgba(0,0,0,0.5);
+    padding: 5px 15px;
+    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 9999999;
+
+    // nav logo 
+    .logo_flag{
+        width: 70px;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    nav{
+        width: 85%;
+        
+        ul{
+            position: absolute;
+            top: 30px;
+            right: 35px;
+
+            li{
+                display: inline-block;
+                margin-left: 40px;
+                list-style: none;
+
+                a{
+                    color: $orange;
+                    font-weight: 500;
+                    font-size: 1.10rem;
+                    position: relative;
+                    
+                    &:hover{
+                        color: rgb(255,255,255);
+                        text-decoration: none;
+
+                         &::before{
+                        position: absolute;
+                        top: 35px;
+                        content: "";
+                        width: 100%;
+                        border-bottom: 2px solid $white;
+                    }
+                    }
+                }
+            }
+        }
+    }
+
+    .bars_icon{
+        position: absolute;
+        top: 22.50px;
+        right: 0px;
+        width: 100px;
+        cursor: pointer;
+        display: none;
+
+        .bars_line{
+            width: 45px;
+            height: 3px;
+            background-color: $orange;
+            margin: 9.10px;
+        }
+
+        .activeLine{
+            width: 30px;
+        }
+    }
+
+    // serach input 
+    .searchBox{
+        width: 100%;
+        margin: 10px auto;
+        opacity: 0;
+        display: none;
+        z-index: -5;
+
+        form{
+
+            input{
+                width: 88%;
+                margin: 0 auto;
+                position: absolute;
+                left: 7%;
+                padding: 10px;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                background-color: #151515;
+                color: $orange;
+                font-weight: bold;
+            }
+        }
+         ::placeholder{
+                font-weight: normal;
+                color: rgba(169, 169, 169, 0.388);
+                font-size: 12px;
+            }
+
+        .angleLeft{
+            font-size: 60px;
+            margin-top: -12px;
+            font-weight: normal;
+            color: $orange;
+        }
+    }
+
+    // end search 
+}
+
+// javscript serach 
+.searchBox.searchInputBox{
+            opacity: 1;
+            z-index: 5;
+            display: block;
+}
+
+// ********************************* scroll top ********************************************
+.scrollTop{
+    width: 100%;
+    width: 45px;
+    height: 45px;
+    background-color: orange;
+    position: fixed;
+    bottom: -100%;
+    // bottom: 25px;
+    right: 35px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 2rem;
+    color: white;
+    z-index: 555555555555555;
+    text-decoration: none;
+    opacity: 0;
+    transition: 0.5s all;
+    animation: scrollWidth 0.5s ease infinite;
+
+    i{
+        color: rgb(255,255,255);
+    }
+}
+
+.scrollTop.scrollButton{
+    opacity: 1;
+    bottom: 25px;
+}
+
+// ********************************* Passpoart ********************************************
+.passpoart_body{
+    margin-top: 35px;
+    margin-bottom: 77.50px;
+    width: 100%;
+
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        li{
+            margin: 2px;
+            list-style: none;
+            position: relative;
+            border: 1px solid #333333;
+
+            &:hover{
+                border: 1px solid rgba(255, 166, 0, 0.578);
+                transform: scale(1.10);
+                transition: 0.3s ease;
+            }
+            
+            p{
+                background-color: #333333;
+                padding: 10px 2px;
+                border-radius: 5px;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 12px;
+                position: absolute;
+                top: -45px;
+                width: 200px;
+                z-index: 5;
+                transform: scale(0);
+                transition: 0.4s ease;
+
+                &::before{
+                    position: absolute;
+                    top: 65%;
+                    left: 10%;
+                    transform: translateY(-50%, -50%);
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(134deg);
+                    content: "";
+                    background-color: #333333;
+                    z-index: -1;
+                }
+            }
+
+            img{
+                width: 50.64px;
+                height: 65.35px;
+            }
+        }
+    }
+}
+
+.passpoart_body ul li:hover p{
+    transform: scale(1);
+    transition: 0.4s ease;
+}
+// ********************************* passport pop with text and  img ********************************************
+.passpoartPopsection{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 10%;
+    text-align: center;
+    // transform: scale(0);
+    transition: 0.5s ease;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -999999999;
+
+    .overflow{
+        position: absolute;
+        top: -500px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1000vh;
+        background-color: rgba(0,0,0,0.9);
+        z-index: -1;
+    }
+
+    .closeIcon{
+        width: 100%;
+        position: relative;
+
+        i{
+            position: absolute;
+            // top: -15.50px;
+            right: 50px;
+            font-size: 1.65rem;
+            transition: 0.2s ease;
+
+            &:active{
+                transform: rotate(390deg);
+                transition: 0.5s ease;
+            }
+        }
+    }
+
+    .countryNameWidthPasspoart{
+        margin-bottom: 20px;
+
+        h1{
+            font-size: 1.50rem;
+            font-weight: normal;
+            padding: 0;
+            margin: 0 0 5px 0;
+        }
+
+        .passportText{
+            font-size: 1rem;
+            color: #AD8256;
+            font-weight: normal;
+        }
+    }
+
+    .passpoartImgWidthCountry{
+        width: 100%;
+
+        img{
+            width: 170px;
+        }
+    }
+
+    .arrowAngel{
+        width: 100%;
+        position: absolute;
+        top: 150px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 25px;
+
+        i{
+            font-size: 2.50rem;
+            transition: 0.5s ease;
+
+            &:hover{
+                color: $orange;
+                transform: translateX(-5px);
+            }
+        }
+    }
+
+    .countryRankCountry{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15.50px 0;
+
+        h1{
+            font-size: 1.50rem;
+            margin: 0 50px;
+        }
+    }
+
+    .countryRankName{
+        width: 100%;
+
+        button{
+            padding: 1px 10px;
+            border: none;
+            outline: none;
+            background-color: #AD8256;
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 500;
+
+            &:hover{
+                background-color: $white;
+            }
+        }
+    }
+
+    .parentButton{
+
+        button{
+            margin: 10px 0;
+            width: 200px;
+            padding: 3px 0;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: $white;
+            border: 1px solid #AD8256;
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 500;
+
+            &:hover{
+                background-color: $white;
+                color: $black;
+                border: 1px solid $white;
+            }
+        }
+    }
+
+    .passportSocialIcon{
+
+        i{
+            width: 35px;
+            height: 35px;
+            background-color: #AD8256;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.05rem;
+            line-height: 35px;
+            margin: 0 5px;
+
+            &:hover{
+                background-color: $white;
+                color: $black;
+            }
+
+        }
+    }
+}
+
+.popPassport{
+    transform: scale(1);
+    transition: 0.5s ease;
+    opacity: 1;
+    overflow: visible;
+    z-index: 999999999;
+}
+
+// ********************************* footer Passpoart ********************************************
+.passport_body{
+    position: fixed;
+    bottom: 0;
+    z-index: 555555;
+    display: flex;
+    animation: marqueeText 30s linear infinite;
+
+    @keyframes marqueeText{
+        0%{
+            left: 100%;
+        }
+
+        100%{
+            left: -100%;
+        }
+    }
+
+    .passport_box{
+        display: flex;
+
+        .passport_img{
+            width: 150px;
+
+            img{
+                width: 100%;
+            }
+        }
+
+        // start marquee 
+        .passport_text{
+            width: 150px;
+            height: 80px;
+            background: $black;
+            padding: 0 5px;
+            border-radius: 5px;
+            margin: 0 2px;
+
+            .passport_row{
+                display: flex;
+                margin-top: 10px;
+
+                img{
+                    width: 75px;
+                    height: 60px;
+                }
+
+                h1{
+                    font-size: 1rem;
+
+                    span{
+                        padding: 0 5px;
+                    }
+
+                    .countryRed{
+                        color: rgb(255, 0, 0);
+                    }
+
+                    .countryRank{
+                        line-height: 35px;
+                        color: rgba(255, 255, 255, 0.531);
+                    }
+
+                    .angelArrow{
+
+                        p{
+                            padding: 0;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        // end marquee 
+
+        .passport_index{
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+            background-color: $black;
+            
+            h1,p{
+                font-size: 12px;
+                text-align: center;
+                text-transform: uppercase;
+                // padding: 0px 10px;
+                border-right: 2px solid $white;
+                line-height: 15px;
+                margin: 2px 0;
+            }
+        }
+    }
+}

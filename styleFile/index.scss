@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap');
+@import "sassColor";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    // font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #151515;
+     color: rgb(255,255,255);
+}
+
+html,body{
+    scroll-behavior: smooth;
+}
+
+img,a,i{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255,255,255);
+
+    &:hover{
+        color: rgb(255,255,255);
+    }
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background-color: $black;
+    box-shadow: 5px 8px 8px -6px rgba(0,0,0,0.5);
+    padding: 5px 15px;
+    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 9999999;
+
+    // nav logo 
+    .logo_flag{
+        width: 70px;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    nav{
+        width: 85%;
+        
+        ul{
+            position: absolute;
+            top: 30px;
+            right: 35px;
+
+            li{
+                display: inline-block;
+                margin-left: 40px;
+                list-style: none;
+
+                a{
+                    color: $orange;
+                    font-weight: 500;
+                    font-size: 1.10rem;
+                    position: relative;
+                    
+                    &:hover{
+                        color: rgb(255,255,255);
+                        text-decoration: none;
+
+                         &::before{
+                        position: absolute;
+                        top: 35px;
+                        content: "";
+                        width: 100%;
+                        border-bottom: 2px solid $white;
+                    }
+                    }
+                }
+            }
+        }
+    }
+
+    .bars_icon{
+        position: absolute;
+        top: 22.50px;
+        right: 0px;
+        width: 100px;
+        cursor: pointer;
+        display: none;
+
+        .bars_line{
+            width: 45px;
+            height: 3px;
+            background-color: $orange;
+            margin: 9.10px;
+        }
+
+        .activeLine{
+            width: 30px;
+        }
+    }
+
+    // serach input 
+    .searchBox{
+        width: 100%;
+        margin: 10px auto;
+        opacity: 0;
+        display: none;
+        z-index: -5;
+
+        form{
+
+            input{
+                width: 88%;
+                margin: 0 auto;
+                position: absolute;
+                left: 7%;
+                padding: 10px;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                background-color: #151515;
+                color: $orange;
+                font-weight: bold;
+            }
+        }
+         ::placeholder{
+                font-weight: normal;
+                color: rgba(169, 169, 169, 0.388);
+                font-size: 12px;
+            }
+
+        .angleLeft{
+            font-size: 60px;
+            margin-top: -12px;
+            font-weight: normal;
+            color: $orange;
+        }
+    }
+
+    // end search 
+}
+
+// javscript serach 
+.searchBox.searchInputBox{
+            opacity: 1;
+            z-index: 5;
+            display: block;
+}
+
+// ********************************* scroll top ********************************************
+.scrollTop{
+    width: 100%;
+    width: 45px;
+    height: 45px;
+    background-color: orange;
+    position: fixed;
+    bottom: -100%;
+    // bottom: 25px;
+    right: 35px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 2rem;
+    color: white;
+    z-index: 555555;
+    text-decoration: none;
+    opacity: 0;
+    transition: 0.5s all;
+    animation: scrollWidth 0.5s ease infinite;
+
+    i{
+        color: rgb(255,255,255);
+    }
+}
+
+.scrollTop.scrollButton{
+    opacity: 1;
+    bottom: 25px;
+}
+
+// ********************************* main ********************************************
+.marginTop{
+    position: relative;
+    top: 24.50px;
+}
+.container{
+    width: 100%;
+
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        li{
+            margin: 10px;
+            // border: 1px solid $orange;
+            border-radius: 5px;
+            list-style: none;
+            background-color: rgb(0,0,0);
+
+            img{
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                width: 163px;
+                height: 85px;
+            }
+
+            p{
+                font-size: 14px;
+                  padding: 10px 0 0 0;
+                  color: $white;
+                  font-weight: bold;
+            }
+        }
+    }
+}
+
+// ********************************* pop flag ********************************************
+.angle_left{
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    bottom: 23px;
+    left: 20px;
+    background-color: orange;
+    color: rgb(248, 247, 247);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 42px;
+    z-index: 9999;
+
+    &:hover{
+        background-color: rgb(0, 0, 0);
+    }
+}
+
+.container_body{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 25px 50px;
+}
+
+.country_heading{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    .country_heading{
+    flex: 1 1 200px;
+    text-align: center;
+  }
+
+  iframe,img{
+      width: 50%;
+      height: 200px;
+  }
+
+}
+
+.fontSize{
+    font-size: 2rem;
+}
+
+// .fontSmall{
+//     font-size: 12px;
+//     font-weight: bold;
+// }
+
+.fontSmall{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+h1,h2{
+    text-transform: uppercase;
+}
+
+// javascript 
+#maineCountainer{
+    display: none;
+}
+
+// ********************************* social icon ********************************************
+.social_icon{
+    margin-top: 50px;
+    position: fixed;
+    bottom: 25px;
+    left: 0%;
+    width: 100px;
+    height: auto;
+    text-align: center;
+    z-index: 5;
+
+    .toolTip{
+        margin: 5px 0;
+        transform: scale(0);
+        transition: 0.5s ease;
+
+        p{
+            width: 80px;
+            margin: 7px auto;
+            height: auto;
+            padding: 2px 0;
+            background-color: $white;
+            color: rgb(0,0,0);
+            font-size: 14px;
+            font-weight: 500;
+            position: relative;
+            transform: scale(0);
+            overflow: hidden;
+            opacity: 0;
+            transition: 0.5s ease;
+
+            &::before{
+                width: 15px;
+                height: 15px;
+                background-color: $white;
+                position: absolute;
+                top: 60%;
+                left: 42.50%;
+                transform: translate(-50%, -50%);
+                content: "";
+                transform: rotate(135deg);
+                z-index: -1;
+            }
+        }
+    }
+
+    // javascript toolTip 
+    .toolTip.iconboxPop{
+            transform: scale(1);
+    }
+
+    .toolTip i{
+    width: 41px;
+    height: 41px;
+    background-color: $orange;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    line-height: 41px;
+    }
+
+    .plus_icon i{
+    width: 41px;
+    height: 41px;
+    background-color: $orange;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    line-height: 41px;
+    z-index: 55;
+    }
+}
+
+.social_icon .toolTip:hover p{
+    transform: scale(1);
+    overflow: visible;
+    opacity: 1;
+}
+
+// ********************************* footer ********************************************
+.footer{
+    // position: fixed;
+    bottom: 0;
+    margin-top: 100px;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    background-color: $black;
+
+    p{
+        color: $orange;
+    }
+}
